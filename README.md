@@ -9,8 +9,6 @@ I compiled following projects successfully:
 2. caffe.bin and projects in tools dir
 3. ssd_detect and projects in examples dir
 
-But I failed to compile pycaffe project. So I can not use python in this caffe-ssd-widows.
-
 I completed the whole ssd train-val-test  routine with this caffe-ssd-windows.
 
 Detail information can be got from : 

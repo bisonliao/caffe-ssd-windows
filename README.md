@@ -1,11 +1,15 @@
 # caffe-ssd-windows
 caffe-ssd from weiliu89, I modified it for compliance with Windows. 
 
-I compiled these projects successfully:
+The environment is Windows10+VS2015+CUDA10。
+
+I compiled following projects successfully:
 
 1. caffe
-2. caffe.bin and other projects in tools dir
-3. ssd_detect and other projects in examples dir
+2. caffe.bin and projects in tools dir
+3. ssd_detect and projects in examples dir
+
+But I failed to compile pycaffe project. So I can not use python in this caffe-ssd-widows.
 
 I completed the whole ssd train-val-test  routine with this caffe-ssd-windows.
 

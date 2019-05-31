@@ -4,7 +4,6 @@ import shutil
 import subprocess
 import sys
 
-sys.path.insert(0,'d:/software/caffe_install/caffe-ssd/python')
 
 from caffe.proto import caffe_pb2
 from google.protobuf import text_format
@@ -102,13 +101,13 @@ if __name__ == "__main__":
     if not os.path.exists(label_map_file):
       print("label map file: {} does not exist".format(label_map_file))
       sys.exit()
-    label_map = caffe_pb2.LabelMap()
-    lmf = open(label_map_file, "r")
-    try:
-      text_format.Merge(str(lmf.read()), label_map)
-    except:
-      print("Cannot parse label map file: {}".format(label_map_file))
-      sys.exit()
+#    label_map = caffe_pb2.LabelMap()
+#    lmf = open(label_map_file, "r")
+#    try:
+#      text_format.Merge(str(lmf.read()), label_map)
+#    except:
+#      print("Cannot parse label map file: {}".format(label_map_file))
+#      sys.exit()
   out_parent_dir = os.path.dirname(out_dir)
   if not os.path.exists(out_parent_dir):
     os.makedirs(out_parent_dir)
@@ -121,7 +120,7 @@ if __name__ == "__main__":
   # get caffe root directory
   caffe_root = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
   if anno_type == "detection":
-    cmd = "{}/build/tools/convert_annoset" \
+    cmd = "{}/build/tools/Release/convert_annoset.exe" \
         " --anno_type={}" \
         " --label_type={}" \
         " --label_map_file={}" \
@@ -141,7 +140,7 @@ if __name__ == "__main__":
             min_dim, max_dim, resize_height, resize_width, backend, shuffle,
             check_size, encode_type, encoded, gray, root_dir, list_file, out_dir)
   elif anno_type == "classification":
-    cmd = "{}/build/tools/convert_annoset" \
+    cmd = "{}/build/tools/Release/convert_annoset.exe" \
         " --anno_type={}" \
         " --min_dim={}" \
         " --max_dim={}" \
